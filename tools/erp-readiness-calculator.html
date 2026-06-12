@@ -1,0 +1,428 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-2MM01LT7GL"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-2MM01LT7GL');
+  </script>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ERP Readiness Calculator -- Find Your System Gaps in 2 Minutes</title>
+  <meta name="description" content="Answer 10 questions and get an instant score showing where your business systems are creating the most friction. Free, no sales pitch." />
+  <link rel="canonical" href="https://growthgaplab.com/tools/erp-readiness-calculator" />
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="Growth Gap Lab" />
+  <meta property="og:title" content="ERP Readiness Calculator -- Find Your System Gaps in 2 Minutes" />
+  <meta property="og:description" content="Answer 10 questions and get an instant score showing where your business systems are creating the most friction. Free, no sales pitch." />
+  <meta property="og:url" content="https://growthgaplab.com/tools/erp-readiness-calculator" />
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="ERP Readiness Calculator -- Find Your System Gaps in 2 Minutes" />
+  <meta name="twitter:description" content="Answer 10 questions and get an instant score showing where your business systems are creating the most friction. Free, no sales pitch." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Sora:wght@600;700;800&display=swap" rel="stylesheet" />
+  <style>
+    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+    :root{--navy:#1F4E79;--navy-dark:#163a5a;--blue:#2E75B6;--blue-light:#D6E4F0;--amber:#E8A800;--amber-light:#FFF8E1;--text:#1a1a2e;--text-mid:#4a4a6a;--text-light:#6b7280;--border:#e5e7eb;--white:#ffffff;--bg-soft:#f8fafc;--color-text-secondary:#6b7280}
+    html{scroll-behavior:smooth}
+    body{font-family:'Inter',sans-serif;color:var(--text);background:var(--white);line-height:1.6;-webkit-font-smoothing:antialiased}
+    nav{position:sticky;top:0;z-index:100;background:rgba(255,255,255,0.95);backdrop-filter:blur(8px);border-bottom:1px solid var(--border);padding:0 2rem}
+    .nav-inner{max-width:1100px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;height:64px}
+    .nav-logo{font-family:'Sora',sans-serif;font-size:1.1rem;font-weight:700;color:var(--navy);text-decoration:none}
+    .nav-logo span{color:var(--amber)}
+    .nav-links{display:flex;align-items:center;gap:2rem;list-style:none}
+    .nav-links a{font-size:0.9rem;font-weight:500;color:var(--text-mid);text-decoration:none}
+    .nav-cta{background:var(--navy);color:var(--white)!important;padding:0.5rem 1.25rem;border-radius:6px;font-weight:600!important}
+    .breadcrumb{background:var(--white);border-bottom:1px solid var(--border);padding:0.75rem 2rem;font-size:0.82rem;color:var(--text-light)}
+    .breadcrumb-inner{max-width:1100px;margin:0 auto}
+    .breadcrumb a{color:var(--blue);text-decoration:none}
+    .breadcrumb span{margin:0 0.4rem;opacity:0.5}
+    .page-header{background:linear-gradient(135deg,#0f2d4a 0%,#1F4E79 55%,#2563a8 100%);color:var(--white);padding:4rem 2rem}
+    .page-header-inner{max-width:820px;margin:0 auto}
+    .page-eyebrow{display:inline-block;background:rgba(232,168,0,0.18);color:var(--amber);font-size:0.78rem;font-weight:600;letter-spacing:0.08em;text-transform:uppercase;padding:0.35rem 0.9rem;border-radius:20px;margin-bottom:1.25rem;border:1px solid rgba(232,168,0,0.3)}
+    .page-header h1{font-family:'Sora',sans-serif;font-size:clamp(1.6rem,3.5vw,2.4rem);font-weight:800;line-height:1.2;color:var(--white);margin-bottom:0.75rem}
+    .page-header p{font-size:1rem;color:rgba(255,255,255,0.75);max-width:680px;line-height:1.65}
+    .tool-section{padding:4rem 2rem;background:var(--bg-soft)}
+    .tool-container{max-width:660px;margin:0 auto;background:var(--white);border:1px solid var(--border);border-radius:14px;padding:2.5rem}
+    footer{background:#0d1f30;color:rgba(255,255,255,0.5);padding:2.5rem 2rem;text-align:center}
+    .footer-inner{max-width:1100px;margin:0 auto}
+    .footer-logo{font-family:'Sora',sans-serif;font-size:1rem;font-weight:700;color:var(--white);margin-bottom:0.5rem}
+    .footer-logo span{color:var(--amber)}
+    footer p{font-size:0.82rem;line-height:1.7}
+    footer a{color:rgba(255,255,255,0.4);text-decoration:none}
+    @media(max-width:768px){.nav-links{display:none}.page-header{padding:2.5rem 1.25rem}.tool-section{padding:2.5rem 1.25rem}.tool-container{padding:1.5rem}.breadcrumb{padding:0.75rem 1.25rem}}
+
+    /* Calculator styles */
+    .calc-wrap { padding: 1.5rem 0; }
+    .calc-header { margin-bottom: 2rem; }
+    .calc-header p { font-size: 15px; color: var(--color-text-secondary); margin: 0.5rem 0 0; }
+    .progress-bar-bg { height: 4px; background: #e0e0e0; border-radius: 4px; margin-bottom: 2rem; }
+    .progress-bar-fill { height: 4px; border-radius: 4px; background: #2E75B6; transition: width 0.3s; }
+    .question-label { font-size: 15px; font-weight: 500; margin-bottom: 0.75rem; display: block; }
+    .question-num { font-size: 12px; color: #888; margin-bottom: 0.25rem; display: block; }
+    .options-grid { display: flex; flex-direction: column; gap: 8px; }
+    .option-btn { text-align: left; padding: 10px 14px; border: 1.5px solid #ccc; border-radius: 8px; background: #fff; cursor: pointer; font-size: 14px; color: #1A1A2E; }
+    .option-btn:hover { background: #f5f5f5; }
+    .option-btn.selected { background: #D6E4F0 !important; border: 2px solid #2E75B6 !important; color: #0C447C !important; font-weight: 500; }
+    .nav-row { display: flex; gap: 12px; margin-top: 1.5rem; }
+    .calc-btn-primary { padding: 10px 24px; background: #1F4E79; color: #fff; border: none; border-radius: 8px; font-size: 14px; font-weight: 500; cursor: pointer; }
+    .calc-btn-primary:disabled { opacity: 0.4; cursor: not-allowed; }
+    .calc-btn-secondary { padding: 10px 20px; background: transparent; border: 1px solid #ccc; border-radius: 8px; font-size: 14px; color: #555; cursor: pointer; }
+    .result-wrap { padding: 1rem 0; }
+    .score-circle { width: 140px; height: 140px; border-radius: 50%; display: flex; flex-direction: column; align-items: center; justify-content: center; margin: 0 auto 1.5rem; border: 6px solid #ccc; }
+    .score-num { font-size: 42px; font-weight: 500; line-height: 1; }
+    .score-label { font-size: 12px; color: #888; margin-top: 2px; }
+    .tier-badge { display: inline-block; padding: 6px 16px; border-radius: 20px; font-size: 14px; font-weight: 500; margin-bottom: 1rem; }
+    .tier-desc { font-size: 15px; color: #555; margin-bottom: 1.5rem; line-height: 1.6; }
+    .breakdown-title { font-size: 14px; font-weight: 500; margin-bottom: 0.75rem; }
+    .breakdown-item { margin-bottom: 10px; }
+    .breakdown-label { display: flex; justify-content: space-between; font-size: 13px; color: #666; margin-bottom: 4px; }
+    .breakdown-bar-bg { height: 6px; background: #e0e0e0; border-radius: 4px; }
+    .breakdown-bar-fill { height: 6px; border-radius: 4px; }
+    .capture-box { background: #1F4E79; border-radius: 12px; padding: 1.5rem; margin-top: 1.5rem; }
+    .capture-box h4 { color: #fff; font-size: 16px; font-weight: 500; margin: 0 0 0.5rem; }
+    .capture-box p { color: #D6E4F0; font-size: 13px; margin: 0 0 1rem; line-height: 1.5; }
+    .capture-form { display: flex; flex-direction: column; gap: 10px; }
+    .capture-input { padding: 9px 12px; border-radius: 6px; border: none; font-size: 14px; background: #fff; color: #1A1A2E; outline: none; width: 100%; box-sizing: border-box; }
+    .capture-input::placeholder { color: #999; }
+    .thankyou-box { background: #1F4E79; border-radius: 12px; padding: 1.5rem; margin-top: 1.5rem; text-align: center; }
+    .thankyou-box p { color: #D6E4F0; font-size: 14px; margin: 0 0 1rem; line-height: 1.5; }
+    .calc-restart-btn { margin-top: 1rem; display: block; font-size: 13px; color: #888; background: none; border: none; cursor: pointer; text-align: center; width: 100%; }
+  </style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-inner">
+    <a href="/" class="nav-logo">Growth Gap<span>Lab</span></a>
+    <ul class="nav-links">
+      <li><a href="/#problems">Problem Areas</a></li>
+      <li><a href="/#how-it-works">How It Works</a></li>
+      <li><a href="/#who">Who It's For</a></li>
+      <li><a href="/blog">Blog</a></li>
+      <li><a href="/tools/erp-readiness-calculator">Tools</a></li>
+      <li><a href="/scorecard.html" class="nav-cta">Take the Scorecard</a></li>
+    </ul>
+  </div>
+</nav>
+
+<div class="breadcrumb">
+  <div class="breadcrumb-inner">
+    <a href="/">Growth Gap Lab</a><span>&rsaquo;</span>Tools<span>&rsaquo;</span>ERP Readiness Calculator
+  </div>
+</div>
+
+<header class="page-header">
+  <div class="page-header-inner">
+    <div class="page-eyebrow">Free Tool</div>
+    <h1>How ready is your business for a better system?</h1>
+    <p>Answer 10 questions about how your business operates today. Get an instant score and see exactly where your systems are creating the most friction.</p>
+  </div>
+</header>
+
+<main>
+  <section class="tool-section">
+    <div class="tool-container">
+
+      <div class="calc-wrap" id="calc-app">
+        <div id="quiz-view">
+          <div class="progress-bar-bg"><div class="progress-bar-fill" id="progress" style="width: 0%"></div></div>
+          <div id="question-container"></div>
+          <div class="nav-row">
+            <button class="calc-btn-secondary" id="btn-back" style="display:none">Back</button>
+            <button class="calc-btn-primary" id="btn-next" disabled>Next</button>
+          </div>
+        </div>
+
+        <div id="result-view" style="display:none" class="result-wrap">
+          <div class="score-circle" id="score-circle">
+            <span class="score-num" id="score-num">0</span>
+            <span class="score-label">out of 100</span>
+          </div>
+          <div style="text-align:center">
+            <span class="tier-badge" id="tier-badge"></span>
+            <p class="tier-desc" id="tier-desc"></p>
+          </div>
+          <div class="breakdown-title">Where your gaps are highest</div>
+          <div id="breakdown"></div>
+
+          <div class="capture-box" id="capture-box">
+            <h4>Get your personalized gap report</h4>
+            <p>Enter your details and we will send you a plain-language breakdown of your results with practical next steps.</p>
+            <div class="capture-form">
+              <input class="capture-input" id="cap-name" type="text" placeholder="Your name" />
+              <input class="capture-input" id="cap-company" type="text" placeholder="Company name" />
+              <input class="capture-input" id="cap-email" type="email" placeholder="Work email" />
+              <div id="cap-submit-wrap"></div>
+              <div id="cap-skip-wrap"></div>
+            </div>
+          </div>
+
+          <div class="thankyou-box" id="thankyou-box" style="display:none">
+            <p id="thankyou-msg">Thanks -- your results have been submitted. Someone will review your gaps and be in touch within one business day.</p>
+            <div id="full-scorecard-wrap"></div>
+          </div>
+
+          <button class="calc-restart-btn" id="calc-restart-btn">Start over</button>
+        </div>
+      </div>
+
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="footer-inner">
+    <div class="footer-logo">Growth Gap<span>Lab</span></div>
+    <p>Free scorecards, checklists, and practical guides for growing businesses dealing with system complexity.</p>
+    <p style="margin-top:0.75rem"><a href="/privacy.html">Privacy Policy</a></p>
+  </div>
+</footer>
+
+<script>
+(function() {
+  var questions = [
+    { cat: "Inventory", text: "How often does your inventory count match what the system shows?", options: [
+      { label: "Almost always -- we trust the system", pts: 0 },
+      { label: "Usually, with occasional variances", pts: 3 },
+      { label: "Frequently off -- we reconcile regularly", pts: 7 },
+      { label: "Rarely matches -- we count manually to find the truth", pts: 10 }
+    ]},
+    { cat: "Close", text: "How long does your month-end close typically take?", options: [
+      { label: "Under 5 days", pts: 0 },
+      { label: "5 to 10 days", pts: 3 },
+      { label: "11 to 15 days", pts: 7 },
+      { label: "More than 15 days or we have no formal close", pts: 10 }
+    ]},
+    { cat: "Reporting", text: "How many systems does your team pull data from to build a management report?", options: [
+      { label: "One system -- everything is in one place", pts: 0 },
+      { label: "Two systems with some manual steps", pts: 3 },
+      { label: "Three or more systems plus spreadsheets", pts: 7 },
+      { label: "It takes days and involves multiple people", pts: 10 }
+    ]},
+    { cat: "Multi-entity", text: "How many legal entities or company locations do you manage?", options: [
+      { label: "Just one", pts: 0 },
+      { label: "Two to three", pts: 3 },
+      { label: "Four to ten", pts: 7 },
+      { label: "More than ten", pts: 10 }
+    ]},
+    { cat: "Operations", text: "How much of your production or operations planning is tracked in spreadsheets?", options: [
+      { label: "None -- it all lives in the system", pts: 0 },
+      { label: "A small amount for edge cases", pts: 3 },
+      { label: "A significant portion of daily operations", pts: 7 },
+      { label: "Most or all of it -- spreadsheets run the floor", pts: 10 }
+    ]},
+    { cat: "Reporting", text: "Can leadership get a real-time financial snapshot without asking someone to pull it?", options: [
+      { label: "Yes -- live dashboards are available anytime", pts: 0 },
+      { label: "Mostly -- with a short wait for someone to run it", pts: 3 },
+      { label: "No -- it requires manual work to assemble", pts: 7 },
+      { label: "No -- and it takes days to get reliable numbers", pts: 10 }
+    ]},
+    { cat: "Reporting", text: "How quickly can you answer what is your margin on product X or customer Y?", options: [
+      { label: "Instantly -- it is in the system", pts: 0 },
+      { label: "Within a few hours with some digging", pts: 3 },
+      { label: "It takes a day and involves multiple people", pts: 7 },
+      { label: "We cannot answer this reliably", pts: 10 }
+    ]},
+    { cat: "Operations", text: "How many of your purchase or spend approvals happen over email or outside the system?", options: [
+      { label: "None -- approvals are in the system", pts: 0 },
+      { label: "A few -- mostly informal ones", pts: 3 },
+      { label: "Most approvals happen outside the system", pts: 7 },
+      { label: "All of them -- there is no workflow in place", pts: 10 }
+    ]},
+    { cat: "Multi-entity", text: "How often do sales, operations, and finance disagree on the same number?", options: [
+      { label: "Rarely -- everyone works from the same data", pts: 0 },
+      { label: "Occasionally -- usually minor differences", pts: 3 },
+      { label: "Regularly -- different teams have different versions", pts: 7 },
+      { label: "Constantly -- meetings are spent reconciling data", pts: 10 }
+    ]},
+    { cat: "Close", text: "If you had a surprise audit or investor due diligence request tomorrow, how prepared are you?", options: [
+      { label: "Very prepared -- everything is documented and current", pts: 0 },
+      { label: "Mostly -- a few days of cleanup needed", pts: 3 },
+      { label: "Not very -- it would take weeks to get ready", pts: 7 },
+      { label: "Not at all -- it would be a significant problem", pts: 10 }
+    ]}
+  ];
+
+  var current = 0;
+  var answers = new Array(questions.length).fill(null);
+  var finalScore = 0;
+  var finalTier = '';
+
+  function makeBtn(text, bgColor, textColor, onClick) {
+    var b = document.createElement('button');
+    b.textContent = text;
+    b.style.cssText = 'display:block; width:100%; padding:10px 16px; background:' + bgColor + '; color:' + textColor + '; border:none; border-radius:8px; font-size:14px; font-weight:500; cursor:pointer; -webkit-appearance:none; appearance:none; box-sizing:border-box; margin-bottom:4px;';
+    b.addEventListener('click', onClick);
+    return b;
+  }
+
+  function buildCaptureButtons() {
+    var submitWrap = document.getElementById('cap-submit-wrap');
+    var skipWrap = document.getElementById('cap-skip-wrap');
+    submitWrap.innerHTML = '';
+    skipWrap.innerHTML = '';
+    submitWrap.appendChild(makeBtn('Send my gap report', '#FFF2CC', '#1A1A2E', submitCapture));
+    var skipBtn = makeBtn('No thanks, I just wanted the score', 'transparent', '#94b8d6', function() {
+      document.getElementById('capture-box').style.display = 'none';
+      var tb = document.getElementById('thankyou-box');
+      tb.style.display = 'block';
+      document.getElementById('thankyou-msg').textContent = 'Bookmark this page to come back to your results anytime. Take the full scorecard for a deeper look at your specific situation.';
+      buildFullScoreCardBtn();
+    });
+    skipBtn.style.border = 'none';
+    skipBtn.style.fontSize = '12px';
+    skipWrap.appendChild(skipBtn);
+  }
+
+  function buildFullScoreCardBtn() {
+    var wrap = document.getElementById('full-scorecard-wrap');
+    wrap.innerHTML = '';
+    wrap.appendChild(makeBtn('Take the Full ERP Readiness Scorecard', '#ffffff', '#1F4E79', function() {
+      window.location.href = '/scorecard';
+    }));
+  }
+
+  document.getElementById('btn-next').addEventListener('click', function() {
+    if (answers[current] === null) return;
+    if (current < questions.length - 1) { current++; renderQ(); }
+    else showResult();
+  });
+  document.getElementById('btn-back').addEventListener('click', function() {
+    if (current > 0) { current--; renderQ(); }
+  });
+  document.getElementById('calc-restart-btn').addEventListener('click', restart);
+
+  function renderQ() {
+    var q = questions[current];
+    document.getElementById('progress').style.width = Math.round((current / questions.length) * 100) + '%';
+    document.getElementById('btn-back').style.display = current > 0 ? 'inline-block' : 'none';
+    document.getElementById('btn-next').textContent = current === questions.length - 1 ? 'See my score' : 'Next';
+    document.getElementById('btn-next').disabled = answers[current] === null;
+
+    var container = document.getElementById('question-container');
+    container.innerHTML = '<span class="question-num">Question ' + (current + 1) + ' of ' + questions.length + '</span><span class="question-label">' + q.text + '</span><div class="options-grid" id="options-grid"></div>';
+
+    var grid = document.getElementById('options-grid');
+    q.options.forEach(function(o, i) {
+      var btn = document.createElement('button');
+      btn.className = 'option-btn' + (answers[current] === i ? ' selected' : '');
+      btn.textContent = o.label;
+      btn.addEventListener('click', function() {
+        answers[current] = i;
+        document.querySelectorAll('.option-btn').forEach(function(b) { b.classList.remove('selected'); });
+        this.classList.add('selected');
+        document.getElementById('btn-next').disabled = false;
+      });
+      grid.appendChild(btn);
+    });
+  }
+
+  function showResult() {
+    document.getElementById('quiz-view').style.display = 'none';
+    document.getElementById('result-view').style.display = 'block';
+
+    var total = 0;
+    var catScores = {};
+    answers.forEach(function(ans, i) {
+      if (ans === null) return;
+      var pts = questions[i].options[ans].pts;
+      total += pts;
+      catScores[questions[i].cat] = (catScores[questions[i].cat] || 0) + pts;
+    });
+
+    var maxByCount = {};
+    questions.forEach(function(q) { maxByCount[q.cat] = (maxByCount[q.cat] || 0) + 10; });
+
+    finalScore = total;
+    document.getElementById('score-num').textContent = total;
+
+    var tier, badgeBg, badgeColor, borderColor, numColor, desc;
+    if (total <= 25) {
+      tier = 'Early Stage'; badgeBg = '#EAF3DE'; badgeColor = '#3B6D11'; borderColor = '#639922'; numColor = '#27500A';
+      desc = 'Your systems are handling current complexity reasonably well. Some gaps exist but they are not yet creating significant operational risk. Keep an eye on the areas flagged below as you grow.';
+    } else if (total <= 50) {
+      tier = 'Growing Complexity'; badgeBg = '#FAEEDA'; badgeColor = '#854F0B'; borderColor = '#EF9F27'; numColor = '#633806';
+      desc = 'Gaps are forming in your systems and they are starting to cost time and accuracy. The areas below are worth addressing before they compound. This is the right time to evaluate options.';
+    } else if (total <= 75) {
+      tier = 'At the Wall'; badgeBg = '#FAECE7'; badgeColor = '#993C1D'; borderColor = '#D85A30'; numColor = '#993C1D';
+      desc = 'Your systems are actively slowing the business down. Manual workarounds are consuming time that should go toward growth. The gaps below are creating compounding risk in your operations and financials.';
+    } else {
+      tier = 'Critical'; badgeBg = '#FCEBEB'; badgeColor = '#A32D2D'; borderColor = '#E24B4A'; numColor = '#A32D2D';
+      desc = 'Your current systems are a significant constraint on the business. The cost of staying is measurable in manual hours, data errors, and decisions made on unreliable information. Addressing this should be a near-term priority.';
+    }
+
+    finalTier = tier;
+    document.getElementById('score-circle').style.borderColor = borderColor;
+    document.getElementById('score-num').style.color = numColor;
+    var badge = document.getElementById('tier-badge');
+    badge.textContent = tier;
+    badge.style.background = badgeBg;
+    badge.style.color = badgeColor;
+    document.getElementById('tier-desc').textContent = desc;
+
+    var catColors = { Inventory: '#2E75B6', Close: '#639922', Reporting: '#D85A30', Operations: '#EF9F27', 'Multi-entity': '#534AB7' };
+    document.getElementById('breakdown').innerHTML = Object.entries(catScores)
+      .sort(function(a, b) { return b[1] - a[1]; })
+      .map(function(entry) {
+        var cat = entry[0], score = entry[1];
+        var pct = Math.round((score / maxByCount[cat]) * 100);
+        return '<div class="breakdown-item"><div class="breakdown-label"><span>' + cat + '</span><span>' + pct + '% gap</span></div><div class="breakdown-bar-bg"><div class="breakdown-bar-fill" style="width:' + pct + '%; background:' + (catColors[cat] || '#2E75B6') + '"></div></div></div>';
+      }).join('');
+
+    buildCaptureButtons();
+  }
+
+  function submitCapture() {
+    var name = document.getElementById('cap-name').value.trim();
+    var company = document.getElementById('cap-company').value.trim();
+    var email = document.getElementById('cap-email').value.trim();
+    if (!email) {
+      document.getElementById('cap-email').style.outline = '2px solid #E24B4A';
+      return;
+    }
+    var payload = {
+      fields: [
+        { name: 'firstname', value: name.split(' ')[0] || name },
+        { name: 'lastname', value: name.split(' ').slice(1).join(' ') || '' },
+        { name: 'email', value: email },
+        { name: 'company', value: company }
+      ],
+      context: { pageUri: 'https://growthgaplab.com/tools/erp-readiness-calculator', pageName: 'ERP Readiness Calculator' }
+    };
+    fetch('https://api.hsforms.com/submissions/v3/integration/submit/246480912/d4f8e924-2043-4869-8c3c-a8393a21e416', {
+      method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(payload)
+    }).then(function() {
+      document.getElementById('capture-box').style.display = 'none';
+      document.getElementById('thankyou-box').style.display = 'block';
+      buildFullScoreCardBtn();
+    }).catch(function() {
+      document.getElementById('capture-box').style.display = 'none';
+      document.getElementById('thankyou-box').style.display = 'block';
+      buildFullScoreCardBtn();
+    });
+  }
+
+  function restart() {
+    current = 0;
+    answers = new Array(questions.length).fill(null);
+    finalScore = 0; finalTier = '';
+    document.getElementById('quiz-view').style.display = 'block';
+    document.getElementById('result-view').style.display = 'none';
+    document.getElementById('capture-box').style.display = 'block';
+    document.getElementById('thankyou-box').style.display = 'none';
+    document.getElementById('cap-name').value = '';
+    document.getElementById('cap-company').value = '';
+    document.getElementById('cap-email').value = '';
+    renderQ();
+  }
+
+  renderQ();
+})();
+</script>
+
+</body>
+</html>
