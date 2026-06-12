@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Why Your Inventory Is Always Wrong – Growth Gap Lab</title>
+  <meta name="description" content="Inventory accuracy problems in growing businesses are almost always a systems issue, not a counting issue. Here is why it happens and what actually fixes it." />
+  <link rel="canonical" href="https://growthgaplab.com/problems/inventory-management.html" />
+  <meta property="og:type" content="article" />
+  <meta property="og:site_name" content="Growth Gap Lab" />
+  <meta property="og:title" content="Why Your Inventory Is Always Wrong" />
+  <meta property="og:description" content="Inventory accuracy problems in growing businesses are almost always a systems issue, not a counting issue. Here is why it happens and what actually fixes it." />
+  <meta property="og:url" content="https://growthgaplab.com/problems/inventory-management.html" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Why Your Inventory Is Always Wrong" />
+  <meta name="twitter:description" content="Inventory accuracy problems in growing businesses are almost always a systems issue, not a counting issue. Here is why it happens and what actually fixes it." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Sora:wght@600;700;800&display=swap" rel="stylesheet" />
+  <style>
+    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+    :root{--navy:#1F4E79;--navy-dark:#163a5a;--blue:#2E75B6;--blue-light:#D6E4F0;--amber:#E8A800;--amber-light:#FFF8E1;--text:#1a1a2e;--text-mid:#4a4a6a;--text-light:#6b7280;--border:#e5e7eb;--white:#ffffff;--bg-soft:#f8fafc}
+    html{scroll-behavior:smooth}
+    body{font-family:'Inter',sans-serif;color:var(--text);background:var(--white);line-height:1.6;-webkit-font-smoothing:antialiased}
+    nav{position:sticky;top:0;z-index:100;background:rgba(255,255,255,0.95);backdrop-filter:blur(8px);border-bottom:1px solid var(--border);padding:0 2rem}
+    .nav-inner{max-width:1100px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;height:64px}
+    .nav-logo{font-family:'Sora',sans-serif;font-size:1.1rem;font-weight:700;color:var(--navy);text-decoration:none}
+    .nav-logo span{color:var(--amber)}
+    .nav-links{display:flex;align-items:center;gap:2rem;list-style:none}
+    .nav-links a{font-size:0.9rem;font-weight:500;color:var(--text-mid);text-decoration:none}
+    .nav-cta{background:var(--navy);color:var(--white)!important;padding:0.5rem 1.25rem;border-radius:6px;font-weight:600!important}
+    .breadcrumb{background:var(--white);border-bottom:1px solid var(--border);padding:0.75rem 2rem;font-size:0.82rem;color:var(--text-light)}
+    .breadcrumb-inner{max-width:1100px;margin:0 auto}
+    .breadcrumb a{color:var(--blue);text-decoration:none}
+    .breadcrumb span{margin:0 0.4rem;opacity:0.5}
+    .page-header{background:linear-gradient(135deg,#0f2d4a 0%,#1F4E79 55%,#2563a8 100%);color:var(--white);padding:4rem 2rem}
+    .page-header-inner{max-width:820px;margin:0 auto}
+    .page-eyebrow{display:inline-block;background:rgba(232,168,0,0.18);color:var(--amber);font-size:0.78rem;font-weight:600;letter-spacing:0.08em;text-transform:uppercase;padding:0.35rem 0.9rem;border-radius:20px;margin-bottom:1.25rem;border:1px solid rgba(232,168,0,0.3)}
+    .page-header h1{font-family:'Sora',sans-serif;font-size:clamp(1.6rem,3.5vw,2.4rem);font-weight:800;line-height:1.2;color:var(--white);margin-bottom:0.75rem}
+    .page-header p{font-size:1rem;color:rgba(255,255,255,0.75);max-width:680px;line-height:1.65}
+    .section-inner{max-width:1100px;margin:0 auto}
+    .section-label{font-size:0.75rem;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:var(--blue);margin-bottom:0.75rem}
+    .section-title{font-family:'Sora',sans-serif;font-size:clamp(1.4rem,2.5vw,2rem);font-weight:700;color:var(--text);margin-bottom:0.75rem;line-height:1.25}
+    .section-sub{font-size:1rem;color:var(--text-light);max-width:580px;margin-bottom:2.5rem;line-height:1.65}
+    .symptoms{padding:5rem 2rem;background:var(--bg-soft)}
+    .symptoms-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:1rem}
+    .symptom-card{background:var(--white);border:1px solid var(--border);border-radius:10px;padding:1.25rem 1.5rem;display:flex;align-items:flex-start;gap:0.85rem}
+    .symptom-dot{width:8px;height:8px;border-radius:50%;background:var(--amber);margin-top:0.45rem;flex-shrink:0}
+    .symptom-card p{font-size:0.92rem;color:var(--text-mid);line-height:1.55}
+    .symptom-note{margin-top:2rem;background:var(--blue-light);border-left:4px solid var(--blue);border-radius:0 8px 8px 0;padding:1.1rem 1.5rem;font-size:0.92rem;color:var(--navy);max-width:700px;line-height:1.65}
+    .prose-section{padding:5rem 2rem;background:var(--white)}
+    .prose-section.soft{background:var(--bg-soft)}
+    .prose-inner{max-width:760px;margin:0 auto}
+    .prose-inner h2{font-family:'Sora',sans-serif;font-size:clamp(1.3rem,2.5vw,1.75rem);font-weight:700;color:var(--navy);margin-bottom:1.25rem;line-height:1.3}
+    .prose-inner p{font-size:0.95rem;color:var(--text-mid);line-height:1.75;margin-bottom:1rem}
+    .prose-inner p:last-child{margin-bottom:0}
+    .prose-callout{background:var(--blue-light);border-left:4px solid var(--blue);border-radius:0 8px 8px 0;padding:1.1rem 1.5rem;font-size:0.92rem;color:var(--navy);margin:1.5rem 0;line-height:1.65}
+    .needs-list{list-style:none;display:flex;flex-direction:column;gap:0.55rem;margin-top:1rem}
+    .needs-list li{font-size:0.93rem;color:var(--text-mid);padding:0.7rem 1rem 0.7rem 2.25rem;background:var(--white);border-radius:7px;border:1px solid var(--border);position:relative;line-height:1.55}
+    .needs-list li::before{content:'';position:absolute;left:0.9rem;top:50%;transform:translateY(-50%);width:7px;height:7px;border-radius:50%;background:var(--blue)}
+    .faq-section{padding:5rem 2rem;background:var(--bg-soft)}
+    .faq-list{max-width:720px;display:flex;flex-direction:column}
+    .faq-item{border-bottom:1px solid var(--border);padding:1.5rem 0}
+    .faq-item:first-child{border-top:1px solid var(--border)}
+    .faq-item h3{font-family:'Sora',sans-serif;font-size:1rem;font-weight:700;color:var(--navy);margin-bottom:0.6rem;line-height:1.4}
+    .faq-item p{font-size:0.92rem;color:var(--text-mid);line-height:1.7}
+    .cta-section{background:linear-gradient(135deg,var(--amber-light) 0%,#fff3cd 100%);border-top:2px solid var(--amber);padding:5rem 2rem;text-align:center}
+    .cta-section .section-title{color:var(--navy);max-width:600px;margin:0 auto 1rem}
+    .cta-section .section-sub{margin:0 auto 2.5rem;max-width:520px;color:var(--text-mid)}
+    .btn-primary{display:inline-block;background:var(--navy);color:var(--white);font-weight:700;font-size:0.95rem;padding:0.85rem 1.75rem;border-radius:7px;text-decoration:none}
+    footer{background:#0d1f30;color:rgba(255,255,255,0.5);padding:2.5rem 2rem;text-align:center}
+    .footer-inner{max-width:1100px;margin:0 auto}
+    .footer-logo{font-family:'Sora',sans-serif;font-size:1rem;font-weight:700;color:var(--white);margin-bottom:0.5rem}
+    .footer-logo span{color:var(--amber)}
+    footer p{font-size:0.82rem;line-height:1.7}
+    footer a{color:rgba(255,255,255,0.4);text-decoration:none}
+    @media(max-width:768px){.nav-links{display:none}.page-header{padding:2.5rem 1.25rem}.symptoms,.prose-section,.faq-section,.cta-section{padding:3.5rem 1.25rem}.breadcrumb{padding:0.75rem 1.25rem}}
+  </style>
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@type":"WebPage","name":"Why Your Inventory Is Always Wrong","url":"https://growthgaplab.com/problems/inventory-management.html","description":"Inventory accuracy problems in growing businesses are almost always a systems issue, not a counting issue.","isPartOf":{"@type":"WebSite","name":"Growth Gap Lab","url":"https://growthgaplab.com"}}
+  </script>
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Why do our inventory counts drift so quickly after a physical count?","acceptedAnswer":{"@type":"Answer","text":"A physical count is a snapshot. As soon as transactions start moving again, counts drift if those transactions are not being captured in the same system in real time. The only way to maintain accuracy is to capture every inventory-touching transaction at the point it happens, not after the fact."}},{"@type":"Question","name":"We already have inventory management in QuickBooks. Why is it not working?","acceptedAnswer":{"@type":"Answer","text":"QuickBooks inventory works for simple scenarios: a single location, straightforward products, no lot or serial tracking, limited transaction volume. As those variables increase, the gaps between the accounting and inventory records multiply. The issues you are experiencing are not bugs. They are the limits of what the software was designed to do."}},{"@type":"Question","name":"What is the difference between inventory management and a warehouse management system?","acceptedAnswer":{"@type":"Answer","text":"Inventory management tracks quantities, costs, and transactions for items in your business. A warehouse management system goes deeper into physical handling: bin locations, directed putaway, pick-and-pack workflows, barcode scanning. Most growing businesses need good inventory management first. Warehouse management features become relevant when warehouse efficiency and labor optimization are the primary concern."}},{"@type":"Question","name":"How much improvement can we realistically expect after implementing a better system?","acceptedAnswer":{"@type":"Answer","text":"Most businesses that move to an integrated system see meaningful reductions in count variances, stock-out frequency, and the time spent on manual reconciliation within the first year. The specific improvement depends on where the biggest gaps are in the current process."}}]}
+  </script>
+</head>
+<body>
+
+<nav>
+  <div class="nav-inner">
+    <a href="/" class="nav-logo">Growth Gap<span>Lab</span></a>
+    <ul class="nav-links">
+      <li><a href="/#problems">Problem Areas</a></li>
+      <li><a href="/#how-it-works">How It Works</a></li>
+      <li><a href="/#who">Who It's For</a></li>
+      <li><a href="/scorecard.html" class="nav-cta">Take the Scorecard</a></li>
+    </ul>
+  </div>
+</nav>
+
+<div class="breadcrumb">
+  <div class="breadcrumb-inner">
+    <a href="/">Growth Gap Lab</a><span>&rsaquo;</span><a href="/#problems">Problem Areas</a><span>&rsaquo;</span>Inventory Management
+  </div>
+</div>
+
+<header class="page-header">
+  <div class="page-header-inner">
+    <div class="page-eyebrow">Common Problem</div>
+    <h1>Why your inventory is always wrong (and why counting more often will not fix it)</h1>
+    <p>This is one of the most common frustrations we hear from growing distributors and manufacturers. The count in the system does not match what is on the shelf. The team runs counts. The numbers improve briefly and drift again. The problem is not discipline. It is systems.</p>
+  </div>
+</header>
+
+<main>
+
+  <section class="symptoms">
+    <div class="section-inner">
+      <div class="section-label">Warning Signs</div>
+      <h2 class="section-title">Does this sound familiar?</h2>
+      <p class="section-sub">These are the inventory accuracy problems we see most often in growing businesses.</p>
+      <div class="symptoms-grid">
+        <div class="symptom-card"><div class="symptom-dot"></div><p>Your inventory count never matches the books. Accounting shows one quantity, the warehouse shows another. Reconciling them takes manual effort every time.</p></div>
+        <div class="symptom-card"><div class="symptom-dot"></div><p>Stock-outs happen even with reorder points set. Items run out before a purchase order is triggered. The reorder logic is there but it is not working reliably.</p></div>
+        <div class="symptom-card"><div class="symptom-dot"></div><p>Inventory across multiple warehouses is difficult to see. You cannot get a clear picture of what you have across locations without pulling data from multiple places manually.</p></div>
+        <div class="symptom-card"><div class="symptom-dot"></div><p>Lot tracking and expiry management happen in spreadsheets. If you track lot numbers, serial numbers, or expiration dates, that tracking lives outside your accounting system.</p></div>
+        <div class="symptom-card"><div class="symptom-dot"></div><p>Landed costs are not captured accurately. The cost of goods in the system does not include freight, duties, or handling fees, so your true margin data is unreliable.</p></div>
+        <div class="symptom-card"><div class="symptom-dot"></div><p>There is no real-time visibility into stock levels. You find out you are out of something when a customer calls or a production run stops.</p></div>
+        <div class="symptom-card"><div class="symptom-dot"></div><p>Purchasing and inventory are disconnected. Buyers check the warehouse manually before ordering because purchase orders are not linked to real-time inventory levels.</p></div>
+        <div class="symptom-card"><div class="symptom-dot"></div><p>Production consumes inventory invisibly. If you manufacture or assemble product, raw material consumption during production is not captured in real time.</p></div>
+      </div>
+      <div class="symptom-note">Inventory accuracy is not just a warehouse problem. When your counts are wrong, your purchasing decisions are wrong, your cost of goods is wrong, and your customer commitments are unreliable. The downstream effects compound quickly.</div>
+    </div>
+  </section>
+
+  <section class="prose-section">
+    <div class="prose-inner">
+      <h2>Why inventory accuracy is a systems problem, not a process problem</h2>
+      <p>Inventory accuracy requires that every transaction touching a physical item gets recorded in the same system at the same time: receipts from suppliers, transfers between locations, picks for orders, returns from customers, production runs that consume raw materials.</p>
+      <p>When any of those transactions happen outside the system, or when there is a lag between the physical event and the system update, the count drifts. Count it again and it drifts again. The root cause is not the counting. It is the gap between physical reality and the system of record.</p>
+      <div class="prose-callout">Most businesses struggling with inventory accuracy have the same underlying issue: their inventory system is not integrated with their accounting, purchasing, and production systems. Each updates independently. Reconciliation happens after the fact, manually, and imperfectly.</div>
+      <p>The solution is not more counting. Cycle counts help you discover errors. They do not prevent them. The only way to maintain accuracy is to close the gaps where transactions fall through, and that requires an integrated system, not a better spreadsheet.</p>
+    </div>
+  </section>
+
+  <section class="prose-section soft">
+    <div class="prose-inner">
+      <h2>What integrated inventory management actually looks like</h2>
+      <p>A system built for inventory-driven businesses handles all of the critical connections automatically:</p>
+      <ul class="needs-list">
+        <li>Every receipt from a supplier updates inventory quantity and cost immediately, with no manual entry</li>
+        <li>Every pick for a sales order reduces inventory in real time across the correct location</li>
+        <li>Every production run consumes raw materials and produces finished goods in the same transaction</li>
+        <li>Every transfer between warehouses is visible across the business as it happens</li>
+        <li>Reorder points trigger purchase suggestions based on current quantity, not a lagging snapshot</li>
+        <li>Lot, serial, and expiry tracking is built into every transaction, not maintained in a separate file</li>
+        <li>Landed costs are allocated to inventory at the time of receipt, not estimated at month end</li>
+        <li>Inventory valuation posts directly to the general ledger without manual reconciliation</li>
+      </ul>
+      <p style="margin-top:1.25rem">The result is not perfect inventory accuracy. There is always some shrinkage and error. But the gap between physical reality and the system closes from weeks to days, and reconciliation stops being a major recurring effort.</p>
+    </div>
+  </section>
+
+  <section class="faq-section">
+    <div class="section-inner">
+      <div class="section-label">Common Questions</div>
+      <h2 class="section-title">Questions we hear most often</h2>
+      <div class="faq-list">
+        <div class="faq-item">
+          <h3>Why do our inventory counts drift so quickly after a physical count?</h3>
+          <p>A physical count is a snapshot. As soon as transactions start moving again, counts drift if those transactions are not being captured in the same system in real time. Cycle counting helps you find errors. It does not prevent them. The only durable fix is capturing every inventory-touching transaction at the point it happens.</p>
+        </div>
+        <div class="faq-item">
+          <h3>We already have inventory management in QuickBooks. Why is it not working?</h3>
+          <p>QuickBooks inventory handles simple scenarios well: a single location, straightforward products, no lot or serial tracking, limited transaction volume. As those variables increase, gaps between the accounting and inventory records multiply. The issues you are experiencing are not bugs. They are the limits of what the software was designed to do.</p>
+        </div>
+        <div class="faq-item">
+          <h3>What is the difference between inventory management and a warehouse management system?</h3>
+          <p>Inventory management tracks quantities, costs, and transactions. A warehouse management system goes deeper into the physical handling layer: bin locations, directed putaway, pick-and-pack workflows, barcode scanning at the point of transaction. Most growing businesses need strong inventory management first. Warehouse management features become the priority when warehouse efficiency and labor optimization are the main concern.</p>
+        </div>
+        <div class="faq-item">
+          <h3>How much improvement can we realistically expect?</h3>
+          <p>Most businesses that move from a disconnected environment to an integrated system see meaningful reductions in count variances, stock-out frequency, and the time spent on manual reconciliation within the first year. The specific improvement depends on where the gaps are in your current process, which is exactly what a readiness assessment helps identify.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="cta-section">
+    <div class="section-inner">
+      <div class="section-label" style="color:var(--navy)">Free Scorecard</div>
+      <h2 class="section-title">How serious is your inventory problem?</h2>
+      <p class="section-sub">The free ERP Readiness Scorecard covers inventory accuracy, purchasing, production, and reporting. Get a score based on your specific situation in under 5 minutes.</p>
+      <a href="/scorecard.html" class="btn-primary">Take the Free ERP Readiness Scorecard</a>
+      <p style="margin-top:1.25rem;font-size:0.82rem;color:var(--text-light)">No sales pitch. No vendor push. Just a clear picture of where your systems stand.</p>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <div class="footer-inner">
+    <div class="footer-logo">Growth Gap<span>Lab</span></div>
+    <p>Free scorecards, checklists, and practical guides for growing businesses dealing with system complexity.</p>
+    <p style="margin-top:0.75rem"><a href="/privacy.html">Privacy Policy</a></p>
+  </div>
+</footer>
+
+</body>
+</html>
