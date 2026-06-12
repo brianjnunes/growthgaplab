@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ERP Readiness Scorecard – Growth Gap Lab</title>
+  <meta name="description" content="Take the free ERP Readiness Scorecard and get a clear picture of where your systems stand in under 5 minutes." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Sora:wght@600;700;800&display=swap" rel="stylesheet" />
+  <style>
+    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+    :root{
+      --navy:#1F4E79;--navy-dark:#163a5a;--blue:#2E75B6;--blue-light:#D6E4F0;
+      --amber:#E8A800;--amber-light:#FFF8E1;--text:#1a1a2e;--text-mid:#4a4a6a;
+      --text-light:#6b7280;--border:#e5e7eb;--white:#ffffff;--bg-soft:#f8fafc
+    }
+    html{scroll-behavior:smooth}
+    body{font-family:'Inter',sans-serif;color:var(--text);background:var(--white);line-height:1.6;-webkit-font-smoothing:antialiased;display:flex;flex-direction:column;min-height:100vh}
+
+    /* Nav */
+    nav{position:sticky;top:0;z-index:100;background:rgba(255,255,255,0.95);backdrop-filter:blur(8px);border-bottom:1px solid var(--border);padding:0 2rem}
+    .nav-inner{max-width:1100px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;height:64px}
+    .nav-logo{font-family:'Sora',sans-serif;font-size:1.1rem;font-weight:700;color:var(--navy);text-decoration:none}
+    .nav-logo span{color:var(--amber)}
+    .nav-links{display:flex;align-items:center;gap:2rem;list-style:none}
+    .nav-links a{font-size:0.9rem;font-weight:500;color:var(--text-mid);text-decoration:none}
+    .nav-cta{background:var(--navy);color:var(--white)!important;padding:0.5rem 1.25rem;border-radius:6px;font-weight:600!important}
+
+    /* Page header */
+    .page-header{background:linear-gradient(135deg,#0f2d4a 0%,#1F4E79 55%,#2563a8 100%);color:var(--white);padding:3.5rem 2rem}
+    .page-header-inner{max-width:820px;margin:0 auto;display:flex;align-items:flex-start;justify-content:space-between;gap:2rem;flex-wrap:wrap}
+    .page-header-text{}
+    .page-eyebrow{display:inline-block;background:rgba(232,168,0,0.18);color:var(--amber);font-size:0.78rem;font-weight:600;letter-spacing:0.08em;text-transform:uppercase;padding:0.35rem 0.9rem;border-radius:20px;margin-bottom:1rem;border:1px solid rgba(232,168,0,0.3)}
+    .page-header h1{font-family:'Sora',sans-serif;font-size:clamp(1.6rem,3.5vw,2.4rem);font-weight:800;line-height:1.2;color:var(--white);margin-bottom:0.65rem}
+    .page-header p{font-size:0.98rem;color:rgba(255,255,255,0.72);max-width:540px}
+    .trust-badges{display:flex;flex-direction:column;gap:0.5rem;justify-content:center;flex-shrink:0}
+    .badge{display:flex;align-items:center;gap:0.5rem;font-size:0.8rem;color:rgba(255,255,255,0.6)}
+    .badge-dot{width:6px;height:6px;border-radius:50%;background:var(--amber);flex-shrink:0}
+
+    /* Form area */
+    .form-section{flex:1;background:var(--bg-soft);padding:2.5rem 2rem}
+    .form-wrap{max-width:820px;margin:0 auto;background:var(--white);border-radius:12px;border:1px solid var(--border);overflow:hidden;box-shadow:0 2px 12px rgba(0,0,0,0.06)}
+    .tally-frame{width:100%;border:none;display:block;min-height:640px}
+
+    /* Footer */
+    footer{background:#0d1f30;color:rgba(255,255,255,0.5);padding:2.5rem 2rem;text-align:center}
+    .footer-inner{max-width:1100px;margin:0 auto}
+    .footer-logo{font-family:'Sora',sans-serif;font-size:1rem;font-weight:700;color:var(--white);margin-bottom:0.5rem}
+    .footer-logo span{color:var(--amber)}
+    footer p{font-size:0.82rem;line-height:1.7}
+    footer a{color:rgba(255,255,255,0.4);text-decoration:none}
+
+    @media(max-width:768px){
+      .nav-links{display:none}
+      .page-header{padding:2.5rem 1.25rem}
+      .trust-badges{display:none}
+      .form-section{padding:1.5rem 1rem}
+    }
+  </style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-inner">
+    <a href="/" class="nav-logo">Growth Gap<span>Lab</span></a>
+    <ul class="nav-links">
+      <li><a href="/#problems">Problem Areas</a></li>
+      <li><a href="/#how-it-works">How It Works</a></li>
+      <li><a href="/#who">Who It's For</a></li>
+      <li><a href="/scorecard.html" class="nav-cta">Take the Scorecard</a></li>
+    </ul>
+  </div>
+</nav>
+
+<header class="page-header">
+  <div class="page-header-inner">
+    <div class="page-header-text">
+      <div class="page-eyebrow">Free Diagnostic Tool</div>
+      <h1>ERP Readiness Scorecard</h1>
+      <p>Answer a few questions about how your business operates today. Get a score and a plain-language breakdown of where your systems are creating the most friction.</p>
+    </div>
+    <div class="trust-badges">
+      <div class="badge"><div class="badge-dot"></div>Under 5 minutes</div>
+      <div class="badge"><div class="badge-dot"></div>No sales pitch</div>
+      <div class="badge"><div class="badge-dot"></div>No vendor comparison</div>
+      <div class="badge"><div class="badge-dot"></div>Results sent to your email</div>
+    </div>
+  </div>
+</header>
+
+<section class="form-section">
+  <div class="form-wrap">
+    <iframe
+      class="tally-frame"
+      src="https://tally.so/embed/dWR9bN?alignLeft=1&hideTitle=1&transparentBackground=1&dynamicHeight=1"
+      title="ERP Readiness Scorecard"
+      loading="lazy"
+      allowfullscreen
+    ></iframe>
+  </div>
+</section>
+
+<footer>
+  <div class="footer-inner">
+    <div class="footer-logo">Growth Gap<span>Lab</span></div>
+    <p>Free scorecards, checklists, and practical guides for growing businesses dealing with system complexity.</p>
+  </div>
+</footer>
+
+<script>
+  // Let Tally resize the iframe to its content height
+  window.addEventListener('message', function(e) {
+    if (e.data && e.data.type === 'tally-form-loaded') {
+      var frame = document.querySelector('.tally-frame');
+      if (frame) frame.style.minHeight = '0';
+    }
+    if (e.data && e.data.type === 'tally-form-height-changed' && e.data.height) {
+      var frame = document.querySelector('.tally-frame');
+      if (frame) frame.style.height = e.data.height + 'px';
+    }
+  });
+</script>
+
+</body>
+</html>
